@@ -30,3 +30,22 @@ def generate_report(processed_deliveries, failed_attempts):
     print("Total Processed Deliveries:", processed_deliveries)
     print("Number of Failed/Rejected Entries:", failed_attempts)
 
+while True:
+    user_input = get_valid_input()
+
+
+    if user_input == "quit":
+        generate_report(processed_deliveries, failed_attempts)
+        break
+
+
+    if user_input is None:
+        failed_attempts += 1
+        continue
+
+
+    tax = calculate_tax(user_input)
+    current_total = process_delivery(current_total, user_input)
+    processed_deliveries += 1
+    print("Processed deliveries:", processed_deliveries)
+    print("Tax for this delivery:", tax)
