@@ -18,3 +18,8 @@ def calculate_tax(amount):
     tax_rate = 0.10
     tax = amount * tax_rate
     return tax    
+
+def process_delivery(current_total, new_value):
+    current_total += new_value
+    print("Inventory total is now:", current_total)
+    return current_total
