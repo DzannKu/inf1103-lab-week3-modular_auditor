@@ -23,3 +23,10 @@ def process_delivery(current_total, new_value):
     current_total += new_value
     print("Inventory total is now:", current_total)
     return current_total
+
+def generate_report(processed_deliveries, failed_attempts):
+    print("==================================")
+    print("Final Report:")
+    print("Total Processed Deliveries:", processed_deliveries)
+    print("Number of Failed/Rejected Entries:", failed_attempts)
+
