@@ -13,3 +13,8 @@ def get_valid_input():
         return None
 
     return int(new_value)
+
+def calculate_tax(amount):
+    tax_rate = 0.10
+    tax = amount * tax_rate
+    return tax    
