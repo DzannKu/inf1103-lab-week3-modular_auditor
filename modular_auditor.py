@@ -24,17 +24,17 @@ def process_delivery(current_total, new_value):
     print("Inventory total is now:", current_total)
     return current_total
 
-def generate_report(total_units, failed_attempts):
+def generate_report(processed_deliveries, failed_attempts):
     print("==================================")
     print("Final Report:")
-    print("Total Units in Inventory:", total_units)
+    print("Total Processed Deliveries:", processed_deliveries)
     print("Number of Failed/Rejected Entries:", failed_attempts)
 
 while True:
     user_input = get_valid_input()
 
     if user_input == "quit":
-        generate_report(current_total, failed_attempts)
+        generate_report(processed_deliveries, failed_attempts)
         break
 
     if user_input is None:
@@ -46,9 +46,3 @@ while True:
     processed_deliveries += 1
     print("Processed deliveries:", processed_deliveries)
     print("Tax for this delivery:", tax)
-
-    if current_total > 500:
-        print("==================================")
-        print("Alert! Inventory exceeds 500 units.")
-        generate_report(current_total, failed_attempts)
-        break
